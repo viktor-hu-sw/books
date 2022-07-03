@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns in Go</title>
+    <link>http://example.org/Creational-Patterns/</link>
+    <description>Recent content on Design Patterns in Go</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/Creational-Patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Builder and Functional Options</title>
+      <link>http://example.org/Creational-Patterns/builder/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/Creational-Patterns/builder/</guid>
+      <description>Problem Builder Pattern Functional Options Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
+For example, this table shows the requirement for creating a valid Client.
+Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s &amp;lt; IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time.</description>
+    </item>
+    
+  </channel>
+</rss>
