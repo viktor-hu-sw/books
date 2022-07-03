@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /tags/*
 
-Sitemap: http://example.org/sitemap.xml
+Sitemap: https://book.huadonghu.me/design-patterns-in-go/sitemap.xml

@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/Creational-Patterns/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/Creational-Patterns/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/Structural-Design-Patterns/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/Structural-Design-Patterns/</loc>
   </url><url>
-    <loc>http://example.org/Behavioral-Design-Patterns/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/Behavioral-Design-Patterns/</loc>
   </url><url>
-    <loc>http://example.org/Creational-Patterns/builder/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/Creational-Patterns/builder/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/option/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/tags/option/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://book.huadonghu.me/design-patterns-in-go/tags/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
 </urlset>

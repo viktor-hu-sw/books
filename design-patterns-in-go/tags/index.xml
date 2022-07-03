@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Design Patterns in Go</title>
-    <link>http://example.org/tags/</link>
+    <link>https://book.huadonghu.me/design-patterns-in-go/tags/</link>
     <description>Recent content in Tags on Design Patterns in Go</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://book.huadonghu.me/design-patterns-in-go/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>option</title>
-      <link>http://example.org/tags/option/</link>
+      <link>https://book.huadonghu.me/design-patterns-in-go/tags/option/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/tags/option/</guid>
+      <guid>https://book.huadonghu.me/design-patterns-in-go/tags/option/</guid>
       <description></description>
     </item>
     
