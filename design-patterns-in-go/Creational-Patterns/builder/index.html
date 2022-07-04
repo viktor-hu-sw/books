@@ -12,7 +12,7 @@
 <meta name="generator" content="Hugo 0.101.0" />
 
 
-  <meta name="description" content="Problem Builder Pattern Functional Options Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
+  <meta name="description" content="Problem Builder Pattern Functional Options Pattern in Practice Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
 For example, this table shows the requirement for creating a valid Client.
 Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s &lt; IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time." />
 
@@ -40,7 +40,7 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
     content="Builder and Functional Options"
   />
   <meta property="og:site_name" content="Design Patterns in Go" />
-  <meta property="og:description" content="Problem Builder Pattern Functional Options Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
+  <meta property="og:description" content="Problem Builder Pattern Functional Options Pattern in Practice Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
 For example, this table shows the requirement for creating a valid Client.
 Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s &lt; IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time." />
 <meta property="og:type" content="article" />
@@ -59,7 +59,7 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
 
   <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Builder and Functional Options" />
-  <meta name="twitter:description" content="Problem Builder Pattern Functional Options Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
+  <meta name="twitter:description" content="Problem Builder Pattern Functional Options Pattern in Practice Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.
 For example, this table shows the requirement for creating a valid Client.
 Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s &lt; IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time." />
 
@@ -72,8 +72,8 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
       "name": "Builder and Functional Options",
       "url" : "https://book.huadonghu.me/design-patterns-in-go/Creational-Patterns/builder/",
       "headline": "Builder and Functional Options",
-      "description": "Problem Builder Pattern Functional Options Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.\nFor example, this table shows the requirement for creating a valid Client.\nField Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s \u003c IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time.",
-      "wordCount" : "535",
+      "description": "Problem Builder Pattern Functional Options Pattern in Practice Problem Imaging a Config object that requires laborious and complicated initialization of many fileds, and there are some requirements for diffrent fields: Some fileds are required, some are optional, and some have default value.\nFor example, this table shows the requirement for creating a valid Client.\nField Required Default Additional Requirement Addr Y Port Y Method Y Either GET ot POST ConnTimeout N 10s \u003c IOTimeout IOTimeout N 20s Retries N 1 PoolSize N 10 MaxSize: 100 1 2 3 4 5 6 7 8 9 type Client struct { Addr string Port int Method string ConnTimeout time.",
+      "wordCount" : "1017",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -503,7 +503,7 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
 
 <span class="flex align-center no-wrap">
   <svg class="gdoc-icon gdoc_timer"><use xlink:href="#gdoc_timer"></use></svg>
-  <span class="gdoc-post__tag">3 minutes to read</span>
+  <span class="gdoc-post__tag">5 minutes to read</span>
 </span>
 
 
@@ -542,6 +542,7 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
         <li><a href="#problem">Problem</a></li>
         <li><a href="#builder-pattern">Builder Pattern</a></li>
         <li><a href="#functional-options">Functional Options</a></li>
+        <li><a href="#pattern-in-practice">Pattern in Practice</a></li>
       </ul></nav>
       <hr />
     </div>
@@ -833,6 +834,24 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
 </span></span><span class="line"><span class="cl">		<span class="nf">Build</span><span class="p">()</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
+<div class="table-wrap"> <table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single Responsibility Principle. You can isolate complex construction code from the business logic.</td>
+<td>The overall complexity of the code increases since the pattern requires creating multiple new classes.</td>
+</tr>
+<tr>
+<td>You can reuse the same construction code when building various representations of objects.</td>
+<td></td>
+</tr>
+</tbody>
+</table> </div>
 <div class="gdoc-page__anchorwrap">
     <h2 id="functional-options">
         Functional Options
@@ -840,6 +859,253 @@ Field Required Default Additional Requirement Addr Y Port Y Method Y Either GET 
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
+</div>
+<p>Functional options is a paradigm in Go for friendly and extensible APIs popularized by <a
+  class="gdoc-markdown__link"
+  href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis"
+  
+>Dave Cheney</a>.</p>
+<p>First of all, let&rsquo;s define a <code>function</code> type:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Option</span> <span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">Client</span><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Then, let&rsquo;s add two functions that extend the ability to make changes to <code>Client</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">WithConnTimeout</span><span class="p">(</span><span class="nx">connTimeout</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">client</span> <span class="o">*</span><span class="nx">Client</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">.</span><span class="nx">ConnTimeout</span> <span class="p">=</span> <span class="nx">connTimeout</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">WithRetries</span><span class="p">(</span><span class="nx">retries</span> <span class="kt">uint8</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">client</span> <span class="o">*</span><span class="nx">Client</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">.</span><span class="nx">Retries</span> <span class="p">=</span> <span class="nx">retries</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Pay attention to the return type, they are <code>Option</code> type which is a function. So we need to execute this function to make these configs effective to <code>Client</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Options</span> <span class="p">[]</span><span class="nx">Option</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">opts</span> <span class="nx">Options</span><span class="p">)</span> <span class="nf">apply</span><span class="p">(</span><span class="nx">client</span> <span class="o">*</span><span class="nx">Client</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">opt</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">opts</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">opt</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Finally, let&rsquo;s modify our constructor to pass into <code>opts</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">NewClient</span><span class="p">(</span><span class="nx">addr</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">port</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">method</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">opts</span> <span class="o">...</span><span class="nx">Option</span><span class="p">)</span> <span class="o">*</span><span class="nx">Client</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">Client</span><span class="p">{</span><span class="nx">Addr</span><span class="p">:</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">Port</span><span class="p">:</span> <span class="nx">port</span><span class="p">,</span> <span class="nx">Method</span><span class="p">:</span> <span class="nx">method</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Options</span><span class="p">(</span><span class="nx">opts</span><span class="p">).</span><span class="nf">apply</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">client</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">cli</span> <span class="o">:=</span> <span class="nf">NewClient</span><span class="p">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s">&#34;GET&#34;</span><span class="p">,</span> <span class="nf">WithRetries</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nf">WithConnTimeout</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="gdoc-page__anchorwrap">
+    <h2 id="pattern-in-practice">
+        Pattern in Practice
+        <a data-clipboard-text="https://book.huadonghu.me/design-patterns-in-go/Creational-Patterns/builder/#pattern-in-practice" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Pattern in Practice" aria-label="Anchor to: Pattern in Practice" href="#pattern-in-practice">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h2>
+</div>
+<p><a
+  class="gdoc-markdown__link"
+  href="github.com/micro/go-micro"
+  
+>Go-micro</a> is a popular Go micro-services framework. We can find a good example of using <code>Options Pattern</code> in this project.</p>
+<p>We can create a new service simply by calling <code>NewService()</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">service</span> <span class="o">:=</span> <span class="nx">micro</span><span class="p">.</span><span class="nf">NewService</span><span class="p">()</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>But we can also set some options when creating service:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">service</span> <span class="o">:=</span> <span class="nx">micro</span><span class="p">.</span><span class="nf">NewService</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">micro</span><span class="p">.</span><span class="nf">Name</span><span class="p">(</span><span class="s">&#34;hello world&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">micro</span><span class="p">.</span><span class="nf">Version</span><span class="p">(</span><span class="s">&#34;1.0&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Let&rsquo;s dive into the source code to find out how this feature is supported.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">https</span><span class="p">:</span><span class="c1">//github.com/asim/go-micro/blob/master/micro.go
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Option</span> <span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">Options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// NewService creates and returns a new Service based on the packages within.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">NewService</span><span class="p">(</span><span class="nx">opts</span> <span class="o">...</span><span class="nx">Option</span><span class="p">)</span> <span class="nx">Service</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nf">newService</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">newService</span><span class="p">(</span><span class="nx">opts</span> <span class="o">...</span><span class="nx">Option</span><span class="p">)</span> <span class="nx">Service</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">options</span> <span class="o">:=</span> <span class="nf">newOptions</span><span class="p">(</span><span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// set opts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">service</span><span class="p">.</span><span class="nx">opts</span> <span class="p">=</span> <span class="nx">options</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">service</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">https</span><span class="p">:</span><span class="c1">//github.com/asim/go-micro/blob/master/options.go
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Options for micro service
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Options</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Auth</span>      <span class="nx">auth</span><span class="p">.</span><span class="nx">Auth</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Broker</span>    <span class="nx">broker</span><span class="p">.</span><span class="nx">Broker</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Cache</span>     <span class="nx">cache</span><span class="p">.</span><span class="nx">Cache</span>
+</span></span><span class="line"><span class="cl">	<span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">newOptions</span><span class="p">(</span><span class="nx">opts</span> <span class="o">...</span><span class="nx">Option</span><span class="p">)</span> <span class="nx">Options</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">opt</span> <span class="o">:=</span> <span class="nx">Options</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Auth</span><span class="p">:</span>      <span class="nx">auth</span><span class="p">.</span><span class="nx">DefaultAuth</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Broker</span><span class="p">:</span>    <span class="nx">broker</span><span class="p">.</span><span class="nx">DefaultBroker</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Cache</span><span class="p">:</span>     <span class="nx">cache</span><span class="p">.</span><span class="nx">DefaultCache</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">o</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">opts</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">o</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">opt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">opt</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Name of the service
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Name</span><span class="p">(</span><span class="nx">n</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">o</span> <span class="o">*</span><span class="nx">Options</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">o</span><span class="p">.</span><span class="nx">Server</span><span class="p">.</span><span class="nf">Init</span><span class="p">(</span><span class="nx">server</span><span class="p">.</span><span class="nf">Name</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Version of the service
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Version</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">Option</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">o</span> <span class="o">*</span><span class="nx">Options</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">o</span><span class="p">.</span><span class="nx">Server</span><span class="p">.</span><span class="nf">Init</span><span class="p">(</span><span class="nx">server</span><span class="p">.</span><span class="nf">Version</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
 </div>
 
     </section>
